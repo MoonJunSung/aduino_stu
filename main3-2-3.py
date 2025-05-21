@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 from urllib.request import urlopen
 
-ip = '192.168.137.190q'
+ip = '192.168.137.190'
 stream = urlopen('http://'+ ip +':81/stream')
 buffer = b''
 
@@ -32,8 +32,8 @@ while True:
             if key == ord('q'):
                 urlopen('http://'+ ip +'/action?go=stop')
                 break
-            elif key == ord('w'):
-                print('전진')
+            elif key == ord('s'):
+                print('후진')
                 urlopen('http://'+ ip +'/action?go=forward')
             elif key == ord('a'):
                 print('왼쪽')
@@ -41,8 +41,8 @@ while True:
             elif key == ord('d'):
                 print('오른쪽')
                 urlopen('http://'+ ip +'/action?go=right')
-            elif key == ord('s'):
-                print('후진')
+            elif key == ord('w'):
+                print('전진')
                 urlopen('http://'+ ip +'/action?go=backward')
             elif key == ord('A'):
                 print('왼쪽 회전')
